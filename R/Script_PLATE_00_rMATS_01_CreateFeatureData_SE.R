@@ -95,8 +95,8 @@ Preprocess_rMATS.SE <- function(file, GTF) {
                 
                 # gene_type
                 gene_type <- strsplit(ref$V9, split=";")
-                gene_type <- sapply(gene_type, function(x) grep("gene_type", x, value=TRUE))
-                gene_type <- gsub("gene_type", "", gene_type)
+                gene_type <- sapply(gene_type, function(x) grep("gene_biotype", x, value=TRUE))
+                gene_type <- gsub("gene_biotype", "", gene_type)
                 gene_type <- gsub(" ", "", gene_type)
                 gene_type <- gsub("\"", "", gene_type)
                 head(gene_type)
